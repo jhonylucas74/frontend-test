@@ -30,7 +30,7 @@ Depois do seu setup você precisará seguir as seguintes instruções, para cons
 5. **Não submeta o Pull Request**, envie um link do seu repositório para apinto@rederecord.com.br :D
 
 ### Requisitos obrigatórios
-1. Escreva o código com BackboneJS ou VanillaJS  ;)
+1. Escreva o código com ReactJS, BackboneJS ou VanillaJS  ;)
 2. Utilizar um pré-processador CSS de sua preferência.
 3. Testes e documentação.
 4. Automação de tarefas. (Gulp? Grunt? Webpack? :D)
