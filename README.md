@@ -1,6 +1,6 @@
 
 ### Sobre o R7.COM
-O R7.com é um portal mantido pela Record TV, com quase 10 anos de vida. Possui mais de 50 milhões de visitantes únicos e média de 200 milhões de pageviews mensalmente e conta coma uma equipe de quase 300 pessoas.
+O R7.com é um portal de notícias mantido pela Record TV, com quase 10 anos de vida. Possui mensalmente mais de 50 milhões de visitantes únicos e média de 200 milhões de pageviews e conta coma uma equipe de quase 300 pessoas.
 
 ### Teste Frontend
 Esse teste consiste em conhecermos um pouco mais sobre suas skills com HTML, CSS, JavaScript, Código responsivo, suporte a crossbrowser e lógica.
