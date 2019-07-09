@@ -15,6 +15,7 @@ module.exports = {
     publicPath: '/'
   },
   devServer: {
+    contentBase: path.join(__dirname, 'public'),
     historyApiFallback: true,
     inline: true,
     host: '0.0.0.0',
@@ -25,6 +26,7 @@ module.exports = {
       Components: path.resolve(__dirname, 'src/components/'),
       Assets: path.resolve(__dirname, 'src/assets/'),
       Styles: path.resolve(__dirname, 'src/styles/'),
+      Util: path.resolve(__dirname, 'src/util/'),
     }
   },
   module: {
