@@ -1,0 +1,17 @@
+@import '~normalize.css/normalize';
+@import 'theme';
+
+body {
+  box-sizing: border-box;
+  background-color: $bg-primary-color;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+}
+
+#app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
