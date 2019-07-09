@@ -1,6 +1,7 @@
 import React from 'react';
 import Api from 'Util/api';
 import './ranking.scss';
+import logo from 'Assets/images/fazenda_logo.png';
 
 export default class Ranking extends React.Component {
   constructor (props) {
@@ -19,6 +20,8 @@ export default class Ranking extends React.Component {
 
     return (
       <div className="ranking">
+        <RankingHeader />
+
         <ul>
           { rankingList.map((elm, i) =>
             <RankingItem
@@ -32,14 +35,17 @@ export default class Ranking extends React.Component {
   }
 }
 
-/*
 const RankingHeader = () => {
   return (
     <div className="ranking__header">
+      <img className="ranking__header__logo"
+        alt="Logo a Fazenda"
+        src={logo} />
+
       <h1>Ranking</h1>
     </div>
   )
-}*/
+}
 
 const RankingItem = (props) => {
   return (
