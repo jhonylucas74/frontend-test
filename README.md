@@ -1,65 +1,75 @@
 
-### Sobre o R7.COM
-O R7.com é um portal de notícias mantido pela Record TV, com quase 10 anos de vida. Possui mensalmente mais de 50 milhões de visitantes únicos e média de 200 milhões de pageviews e conta coma uma equipe de quase 300 pessoas.
+## Ranking Web - A Fazenda
 
-### Teste Frontend
-Esse teste consiste em conhecermos um pouco mais sobre suas skills com HTML, CSS, JavaScript, Código responsivo, suporte a crossbrowser e lógica.
+Esse projeto foi desenvolvido a partir do repositório de teste para novos frontends disponível no github do R7.com.
 
-### Orientações
-Primeiramente, faça o clone do projeto no seu computador.
-Crie uma branch (pode ser com seu nome mesmo) e depois instale as dependências:
+## Onboarding do projeto
+
+Nessa seção vamos tratar sobres os scripts presentes no projeto. Após clonar o repositório rode o comando para instalar todas as depedências.
 
 ```sh
 npm install
 ```
 
-Após isso, rode a aplicação:
+### Rodando o projeto
+
+Para iniciar o servidor do projeto basta digitar o comando:
+
 ```sh
 npm start
 ```
 
-Depois do setup acima, você deve seguir as seguintes instruções, para construir a aplicação:
+Basta abrir a url ``http://0.0.0.0:3001`` que o servidor estará disponível após o webpack finalizar a compilação inicial do projeto.
 
-1. Desenvolver a página, que tem o seu layout em **a-fazenda.psd**.(A única fonte usada foi a Montserrat, disponível no Google Fonts)
-1. Criar um JavaScript que faça a requisição para **/fazenda.json**
-  * Apresentar os dados requisitados pelo layout.
-  * Calcular a porcentagem de "positives" e "negatives".
-  * Ordernar os items do json a partir da porcentagem calculada acima.
+O Servidor é responsabilidade do webpack, sendo assim, qualquer configuração pode ser feita editando a seção devServer no arquivo ``webpack.config.js``.
 
-### Pontos de atenção
-1. **NÃO** alterar o arquivo **fazenda.json**. Em hipótese nenhuma!
-1. Se for preciso modificar a estrutura e workflow, atualizar o README.
-1. **Não submeta o Pull Request**, envie um link do seu repositório para apinto@rederecord.com.br :D
+Curiosidade: como webpack está apontando para ``0.0.0.0`` e não para ``localhost`` é possível acessar o front através de qualquer aparelho conectado a rede interna. Para isso é necessário trocar o ``0.0.0.0`` pelo ip atual da máquina que está executando o projeto.
 
-### Requisitos obrigatórios
-1. Escreva  o código de preferencia em javascript puro, mas você também pode usar react, angular, vue, ou outro framework.
-1. Não usar geradores como yeoman, angular-cli, create-react-app, etc.
-1. Utilizar um pré-processador CSS de sua preferência.
-1. Testes. Você pode usar jest, cypress, etc..
-1. Documentação, remova todo o conteúdo deste README e nos conte como usar seu projeto, rodar os testes, subir a aplicação, etc.
-1. Automação de tarefas, você pode usar ferramentas como Gulp, Grunt, Webpack, etc.
-1. Ser fiel ao .psd.
-1. Crossbrowser, sua aplicação deve funcionar nos principais navegadores (IE11+, Firefox, Safari, Chrome).
-1. O layout deve ser responsivo
+### Rodando os testes
 
-### Requisitos extras
-1. Acessibilidade
-1. SEO
-1. Performance
+O responsável pelos testes é o cypress. Para inciar a UI de testes basta rodar:
 
-### O que será avaliado?
-- Ordenação dos participantes
-- Cálculo dos votos
-- Layout responsivo
-- Documentação
-- Automatizador de tarefas
-- Performance
-- Organização
-- Boas práticas
-- ES6
-- Testes
-- Pré-processador css
-- Arquitetura css (BEM, SMACSS, ITCSS, etc)
-- Semântica/Acessibilidade/SEO
+```sh
+npm test
+```
 
-<sub>Os dados presentes neste teste são totalmente fictícios.</sub>
+Para executar uma rotina de testes basta selecionar um dos arquivos no canto esquerdo do programa.
+
+Uma vez que a UI esteja rodando, qualquer alteração feita na pasta cypress dentro do projeto vai ser refletida na interface de testes.
+
+### Build do projeto
+
+A maioria do setup desse projeto é focado no desenvolvimento. Para geração do código para produção é necessário rodar o seguinte comando:
+
+```sh
+npm run build
+```
+
+O comando vai iniciar a compilação otimizada do código do projeto. Todos os artefados gerados estarão disponíveis na pasta ``/dist``.
+
+## Estrutura do projeto
+
+Abaixo segue um breve resumo das pastas do projeto.
+
+```js
+  /cypress // testes
+  /public
+  __/fazenda.json
+  __/index.html // arquivo base
+  src
+  __/assets // imagens
+  __/components
+  __/__/ranking // Foco do projeto <3
+  __/styles // Estilos globais e resets
+  __/util // Classes e funções de apoio
+  App.js // Coração da aplicação
+  index.js // Ponto de partida
+```
+
+Essa estrutura foi feita para o desenvolvimento de aplicações maiores e mais complexas do que a do teste implementado. Mas a melhor maneira de crescer um projeto é crescer de maneira organizada desde de o inicio, acredito que seja o setup mínimo para iniciar com o React em uma aplicação web, conforme as necessidades desse teste.
+
+### Observações
+
+``Normalize.css`` está sendo usado para resetar os estilos para todos os navegadores.
+
+``Helmet`` é usado para adicionar metatags no escopo do HTML afim de melhorar o SEO em aplicações react.
