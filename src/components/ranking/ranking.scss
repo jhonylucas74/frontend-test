@@ -27,6 +27,7 @@
       font-weight: 700;
       color: $bg-primary-color;
       text-align: right;
+      cursor: default;
     }
 
     @media (max-width: 380px) {
@@ -91,6 +92,7 @@
           font-weight: 600;
           color: $second-color;
           background-color: $bg-secondary-color;
+          cursor: default;
         }
       }
 

@@ -1,10 +1,16 @@
 const path = require('path');
 const HtmlWebPackPlugin = require("html-webpack-plugin");
+const CopyWebPackPlugin = require('copy-webpack-plugin');
 
 const htmlPlugin = new HtmlWebPackPlugin({
   template: "./public/index.html",
   filename: "./index.html"
 });
+
+const copyPlugin = new CopyWebPackPlugin([{
+  from: 'public/fazenda.json',
+  to: 'fazenda.json'
+}]);
 
 module.exports = {
   entry: "./src",
@@ -77,5 +83,5 @@ module.exports = {
       }
     ]
   },
-  plugins: [htmlPlugin]
+  plugins: [htmlPlugin, copyPlugin]
 }
