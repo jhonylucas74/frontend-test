@@ -19,6 +19,12 @@ context('Ranking - The Breakfast Club', () => {
     cy.get('.ranking__item').eq(2).contains('Cracrete nº1');
   })
 
+  it('Checking HTML metadata for improve SEO', () => {
+    cy.get('title').contains('Bárbara Evans está com tudo na Fazenda');
+    cy.get('meta[name="description"]')
+      .should("have.attr", "content", "Veja a lista completa de votação da nova temporada de A Fazenda.");
+  })
+
   describe('Checking the percent in tooltips.', () => {
     it('Bárbara Evans', () => {
       cy.get('.ranking__item:nth-child(1) .tooltip__column').eq(0).contains('88%');

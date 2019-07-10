@@ -1,7 +1,9 @@
 import React from 'react';
 import Api from 'Util/api';
+import {Helmet} from 'react-helmet'
+import logoImage from 'Assets/images/fazenda_logo.png';
 import './ranking.scss';
-import logo from 'Assets/images/fazenda_logo.png';
+
 
 export default class Ranking extends React.Component {
   constructor (props) {
@@ -15,13 +17,25 @@ export default class Ranking extends React.Component {
       .catch(err => console.error(err))
   }
 
+  generateSEOTag() {
+    const {rankingList} = this.state;
+    if (rankingList.length === 0) return null;
+
+    return (
+      <Helmet>
+        <title>{rankingList[0].name} está com tudo na Fazenda</title>
+        <meta name="description" content="Veja a lista completa de votação da nova temporada de A Fazenda." />
+      </Helmet>
+    )
+  }
+
   render() {
     const {rankingList} = this.state;
 
     return (
       <div className="ranking">
+        {this.generateSEOTag()}
         <RankingHeader />
-
         <ul>
           { rankingList.map((elm, i) =>
             <RankingItem
@@ -40,7 +54,7 @@ const RankingHeader = () => {
     <div className="ranking__header">
       <img className="ranking__header__logo"
         alt="Logo a Fazenda"
-        src={logo} />
+        src={logoImage} />
 
       <h1>Ranking</h1>
     </div>

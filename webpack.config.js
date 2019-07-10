@@ -1,4 +1,3 @@
-const Dotenv = require('dotenv-webpack');
 const path = require('path');
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 
@@ -78,8 +77,5 @@ module.exports = {
       }
     ]
   },
-  plugins: [
-    new Dotenv({ systemvars: true }),
-    htmlPlugin
-  ]
+  plugins: [htmlPlugin]
 }
