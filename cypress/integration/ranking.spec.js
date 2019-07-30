@@ -4,7 +4,7 @@ context('Ranking - The Breakfast Club', () => {
   })
 
   it('Fetch api and render list.', () => {
-    cy.get('.ranking__item').should('have.length', 5);
+    cy.get('.ranking__item').should('have.length', 5); // ul
   })
 
   it('Checking correct order for each farmer.', () => {
